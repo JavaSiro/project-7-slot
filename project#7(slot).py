@@ -128,13 +128,13 @@ def spin(balance):
             break
 
     print(
-        f"You are betting ${bet} on {lines} lines. Total bet is equal to: ${total_bet}")
+        f"You are betting ${bet} on {lines} lines. Total bet is: ${total_bet}")
 
     slots = get_slot_machine_spin(ROWS, COLS, symbol_count)
     print_slot_machine(slots)
     winnings, winning_lines = check_winnings(slots, lines, bet, symbol_value)
     print(f"You won ${winnings}.")
-    print(f"You won on lines:", *winning_lines)
+    print(f"You won on :", *winning_lines)
     return winnings - total_bet
 
 
@@ -147,7 +147,7 @@ def main():
             break
         balance += spin(balance)
 
-    print(f"You left with ${balance}")
+    print(f"${balance} left in your account")
 
 
 main()
